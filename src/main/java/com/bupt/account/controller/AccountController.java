@@ -1,5 +1,6 @@
 package com.bupt.account.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.bupt.account.model.User;
 import com.bupt.account.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -35,6 +38,17 @@ public class AccountController {
     @ResponseBody()
     public String mainUrl(){
         return "account";
+    }
+
+    /**
+     * fastjson demo
+     * @return
+     */
+    @RequestMapping("/fastjson")
+    @ResponseBody()
+    public String fastjson(){
+        List<User> alllUser = userService.getAll();
+        return JSON.toJSONString(alllUser);
     }
 
     /**
