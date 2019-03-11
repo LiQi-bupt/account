@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: account
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: CONFIG
+      profile: dev
+      uri: http://localhost:1111/
+server:
+  port: 8081
