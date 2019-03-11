@@ -24,6 +24,7 @@ public class UserServiceImpl implements UserService{
     @Autowired
     UserMapper userMapper;
 
+
     @Override
     public void create(User user) {
         userMapper.create(user);

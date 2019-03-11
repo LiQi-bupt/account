@@ -18,13 +18,34 @@ import java.util.List;
  */
 
 public interface UserService {
+   /**
+    * 通过id找用户
+    * @param id
+    * @return User
+    */
    User findById(Long id);
 
+   /**
+    * 创建用户
+    * @param user
+    */
    void create(User user);
 
+   /**
+    * 更新用户
+    * @param user
+    */
    void update(User user);
 
+   /**
+    * 删除用户
+    * @param id
+    */
    void delete(Long id);
 
+   /**
+    * 获取所有用户
+    * @return List<User>
+    */
    List<User> getAll();
 }

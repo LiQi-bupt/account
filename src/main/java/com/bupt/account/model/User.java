@@ -12,9 +12,18 @@ package com.bupt.account.model;
  * @author yezuoyao
  * @since 1.0-SNAPSHOT
  */
-public class User {
-    private Long id;
 
+/**
+ * 用户基本信息
+ */
+public class User {
+    /**
+     * 主键
+     */
+    private Long id;
+    /**
+     * 名字
+     */
     private String name;
 
     public User(Long id, String name) {

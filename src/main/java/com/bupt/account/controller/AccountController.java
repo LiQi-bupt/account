@@ -23,17 +23,26 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @since 1.0-SNAPSHOT
  */
 @Controller
-
 public class AccountController {
     @Autowired
     UserService userService;
 
+    /**
+     * 测试
+     * @return
+     */
     @RequestMapping("/")
     @ResponseBody()
     public String mainUrl(){
         return "account";
     }
 
+    /**
+     * 用户主页
+     * @param id
+     * @param model
+     * @return
+     */
     @RequestMapping("hello")
     public String hello(@RequestParam("id") Long id,
                         Model model){
