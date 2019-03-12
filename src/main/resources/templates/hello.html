@@ -5,9 +5,36 @@
     <title>HELLO</title>
 </head>
 <body>
-    <#if user??>
-        hello, ${user.name!}
-    </#if>
 
+
+<form action="#">
+    username:<input type="text" name="username"><br>
+    password:<input type="password" name="password"><br>
+    <input type="button" value="submit" id="submit">
+</form>
+
+<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("#submit").click(function(){
+            var url = "/myblog/servlet/loginServlet";
+            var params = {"username":$("input[type='text']").val(), "password":$("input[type='password']").val()};
+
+            $.ajax({
+                "url" : url,
+                "data" : params,
+                "type" : "post",
+                "success" : function(data) {
+                    // 参数为json类型的对象
+                    alert(data.message)
+                },
+                "error" : function() {
+                    alert("用户名或者密码错误");
+                }
+            });
+
+        });
+    });
+</script>
 </body>
 </html>

@@ -1,9 +1,11 @@
-package com.bupt.account.service;
+package com.bupt.account.service.impl;
 
-import com.bupt.account.dao.UserMapper;
+import com.bupt.account.Respository.UserInfoRespository;
 import com.bupt.account.model.User;
+import com.bupt.account.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -20,12 +22,13 @@ import java.util.List;
  * @since 1.0-SNAPSHOT
  */
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
     @Autowired
-    UserMapper userMapper;
+    UserInfoRespository userInfoRespository ;
 
 
     @Override
+    @Transactional
     public void create(User user) {
         userMapper.create(user);
     }
